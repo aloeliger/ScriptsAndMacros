@@ -5,7 +5,7 @@
 #include "TROOT.h"
 #include <string>
 
-TPad* MakeRatioPlot(TCanvas *TheCanvas, THStack * TheStack, TH1F* TheData, string XAxisLabel)
+TPad* MakeRatioPlot(TCanvas *TheCanvas, THStack * TheStack, TH1F* TheData, string XAxisLabel, float YBoundDown, float YBoundUp)
 {
   TPad* PlotPad = new TPad("pad1", "plot", 0., 0.20, 1., 1.);
   PlotPad->Draw();
@@ -60,7 +60,8 @@ TPad* MakeRatioPlot(TCanvas *TheCanvas, THStack * TheStack, TH1F* TheData, strin
   FinalRatioHist->GetYaxis()->SetTitleOffset(0.32);  
   FinalRatioHist->GetYaxis()->CenterTitle();
   FinalRatioHist->GetYaxis()->SetLabelSize(0.10);
-  FinalRatioHist->GetYaxis()->SetNdivisions(5,0,0);
+  FinalRatioHist->GetYaxis()->SetNdivisions(6,0,0);
+  FinalRatioHist->GetYaxis()->SetRangeUser(YBoundDown*0.95,YBoundUp*1.05);
   
   FinalRatioHist->GetXaxis()->SetLabelSize(0.10);
 
