@@ -9,7 +9,7 @@ TPad* MakeRatioPlot(TCanvas *TheCanvas, THStack * TheStack, TH1F* TheData, strin
 {
   TPad* PlotPad = new TPad("pad1", "plot", 0., 0.20, 1., 1.);
   PlotPad->Draw();
-  TPad* RatioPad = new TPad("pad2", "ratio", 0., 0., 1., 0.20);
+  TPad* RatioPad = new TPad("pad2", "ratio", 0., 0., 1., 0.25);
   RatioPad->Draw();
   
   PlotPad->cd();
